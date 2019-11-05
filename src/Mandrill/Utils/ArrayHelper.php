@@ -17,7 +17,7 @@ class ArrayHelper
      *   Indexed array in the name-content form, like so:
      *   [$key => $value] ==> [['name' => $key, 'content' => $value]].
      */
-    public static function assocToNameContent(array $arr)
+    public static function assocToNameContent(array $arr): array
     {
         $content = [];
         foreach ($arr as $key => $value) {

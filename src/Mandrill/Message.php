@@ -436,7 +436,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *    The working instance for chaining.
      */
-    public function addMetadata($key, $value): self
+    public function addMetadata(string $key, string $value): self
     {
         $this->metadata[$key] = $value;
 
@@ -451,7 +451,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *    The working instance for chaining.
      */
-    public function removeMetadata($key): self
+    public function removeMetadata(string $key): self
     {
         unset($this->metadata[$key]);
 

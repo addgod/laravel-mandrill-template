@@ -146,7 +146,7 @@ class MandrillTemplateMessage extends SimpleMessage
      *
      * @return $this
      */
-    public function attach($file, string $name = null): self
+    public function attach(string $file, string $name = null): self
     {
         $this->attachments[] = compact('file', 'name');
 
