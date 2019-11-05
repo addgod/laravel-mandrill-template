@@ -2,6 +2,7 @@
 
 namespace Addgod\MandrillTemplate;
 
+use Addgod\MandrillTemplate\Mandrill\Attachment;
 use Addgod\MandrillTemplate\Mandrill\Message;
 use Addgod\MandrillTemplate\Mandrill\Recipient;
 use Addgod\MandrillTemplate\Mandrill\Template;
@@ -16,9 +17,11 @@ class MandrillTemplateChannel
      * @param mixed                                  $notifiable
      * @param \Illuminate\Notifications\Notification $notification
      *
+     * @return void
      * @throws \ReflectionException
+     *
      */
-    public function send($notifiable, Notification $notification)
+    public function send($notifiable, Notification $notification): void
     {
         /** @var \Addgod\MandrillTemplate\MandrillTemplateMessage $templateMessage */
         $templateMessage = $notification->toMandrillTemplate($notifiable);
@@ -52,6 +55,12 @@ class MandrillTemplateChannel
             list ($email, $name, $type) = $entry;
             $recipient = new Recipient($email, $name, $type);
             $message->addRecipient($recipient);
+        }
+
+        foreach ($templateMessage->attachments as $entry) {
+            list ($file, $name) = $entry;
+            $attachment = Attachment::createFromFile($file, $name);
+            $message->addAttachment($attachment);
         }
 
         MandrillTemplateFacade::send($template, $message);

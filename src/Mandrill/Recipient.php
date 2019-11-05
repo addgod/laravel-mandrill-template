@@ -55,7 +55,7 @@ class Recipient implements Arrayable
      *
      * @throws \ReflectionException
      */
-    public function __construct($email, $name = null, $type = null)
+    public function __construct(string $email, string $name = null, string $type = null)
     {
         $this->email = $email;
         $this->name = $name;
@@ -130,7 +130,7 @@ class Recipient implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Recipient
      *    The working instance for chaining.
      */
-    public function addMergeVar($name, $content): self
+    public function addMergeVar(string $name, $content): self
     {
         $this->mergeVars[$name] = $content;
 
@@ -146,7 +146,7 @@ class Recipient implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Recipient
      *   The working instance for chaining.
      */
-    public function removeMergeVar($name): self
+    public function removeMergeVar(string $name): self
     {
         unset($this->mergeVars[$name]);
 
@@ -187,7 +187,7 @@ class Recipient implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Recipient
      *    The working instance for chaining.
      */
-    public function addMetadata($key, $value): self
+    public function addMetadata(string $key, string $value): self
     {
         $this->metadata[$key] = $value;
 
@@ -202,7 +202,7 @@ class Recipient implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Recipient
      *    The working instance for chaining.
      */
-    public function removeMetadata($key): self
+    public function removeMetadata(string $key): self
     {
         unset($this->metadata[$key]);
 
@@ -212,7 +212,7 @@ class Recipient implements Arrayable
     /**
      * {@inheritdoc}
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'email' => $this->email,

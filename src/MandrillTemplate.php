@@ -9,7 +9,7 @@ use Mandrill;
 class MandrillTemplate
 {
     /**
-     * @var Mandrill
+     * @var \Mandrill
      */
     protected $client;
 
@@ -31,8 +31,10 @@ class MandrillTemplate
      *
      * @param \Addgod\MandrillTemplate\Mandrill\Template $template
      * @param \Addgod\MandrillTemplate\Mandrill\Message  $message
+     *
+     * @return void
      */
-    public function send(Template $template, Message $message)
+    public function send(Template $template, Message $message): void
     {
         $this->api->messages->sendTemplate($template->getName(), null, $message->toArray());
     }

@@ -102,7 +102,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *   The working instance for chaining.
      */
-    public function setSubject($subject): self
+    public function setSubject(string $subject): self
     {
         $this->subject = $subject;
 
@@ -127,7 +127,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *   The working instance for chaining.
      */
-    public function setFromEmail($fromEmail): self
+    public function setFromEmail(string $fromEmail): self
     {
         $this->fromEmail = $fromEmail;
 
@@ -152,7 +152,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *   The working instance for chaining.
      */
-    public function setFromName($fromName): self
+    public function setFromName(string $fromName): self
     {
         $this->fromName = $fromName;
 
@@ -202,7 +202,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *   The working instance for chaining.
      */
-    public function removeRecipient($email): self
+    public function removeRecipient(string $email): self
     {
         unset($this->recipients[$email]);
 
@@ -256,7 +256,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *   The working instance for chaining.
      */
-    public function addHeader($key, $value): self
+    public function addHeader(string $key, string $value): self
     {
         $this->headers[$key] = $value;
 
@@ -271,7 +271,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *   The working instance for chaining.
      */
-    public function removeHeader($key): self
+    public function removeHeader(string $key): self
     {
         unset($this->headers[$key]);
 
@@ -286,7 +286,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *    The working instance for chaining.
      */
-    public function setPreserveRecipients($preserveRecipients): self
+    public function setPreserveRecipients(bool $preserveRecipients): self
     {
         $this->preserveRecipients = $preserveRecipients ? true : false;
 
@@ -339,7 +339,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *    The working instance for chaining.
      */
-    public function addMergeVar($name, $content): self
+    public function addMergeVar(string $name, $content): self
     {
         $this->mergeVars[$name] = $content;
 
@@ -355,7 +355,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *   The working instance for chaining.
      */
-    public function removeMergeVar($name): self
+    public function removeMergeVar(string $name): self
     {
         unset($this->mergeVars[$name]);
 
@@ -395,7 +395,7 @@ class Message implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Message
      *   The working instance for chaining.
      */
-    public function addTag($tag): self
+    public function addTag(string $tag): self
     {
         $this->tags[] = $tag;
 
@@ -545,7 +545,7 @@ class Message implements Arrayable
     /**
      * {@inheritdoc}
      */
-    public function toArray()
+    public function toArray(): array
     {
         // Prepare recipients data.
         $to = [];

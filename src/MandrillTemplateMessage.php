@@ -36,6 +36,20 @@ class MandrillTemplateMessage extends SimpleMessage
     public $recipients = [];
 
     /**
+     * The attachments for the message.
+     *
+     * @var array
+     */
+    public $attachments = [];
+
+    /**
+     * The raw attachments for the message.
+     *
+     * @var array
+     */
+    public $rawAttachments = [];
+
+    /**
      * Set the template name.
      *
      * @param string $template
@@ -120,6 +134,21 @@ class MandrillTemplateMessage extends SimpleMessage
     public function bcc(string $address, string $name = null): self
     {
         $this->recipients[] = [$address, $name, Type::BCC];
+
+        return $this;
+    }
+
+    /**
+     * Attach a file to the message.
+     *
+     * @param string $file
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function attach($file, string $name = null): self
+    {
+        $this->attachments[] = compact('file', 'name');
 
         return $this;
     }

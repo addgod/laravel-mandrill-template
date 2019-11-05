@@ -30,7 +30,7 @@ class Template implements Arrayable
      * @param string $name
      *   Template immutable slug or name.
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
@@ -81,7 +81,7 @@ class Template implements Arrayable
      * @return \Addgod\MandrillTemplate\Mandrill\Template
      *   The working instance for chaining.
      */
-    public function addContent($name, $content): self
+    public function addContent(string $name, string $content): self
     {
         $this->content[$name] = $content;
 
@@ -91,7 +91,7 @@ class Template implements Arrayable
     /**
      * {@inheritdoc}
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'name'    => $this->name,

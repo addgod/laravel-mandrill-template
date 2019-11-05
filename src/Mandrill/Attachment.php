@@ -38,7 +38,7 @@ class Attachment implements Arrayable
      * @param string $name
      * @param string $content
      */
-    public function __construct($type, $name, $content)
+    public function __construct(string $type, string $name, string $content)
     {
         $this->type = $type;
         $this->name = $name;
@@ -78,7 +78,7 @@ class Attachment implements Arrayable
     /**
      * {@inheritdoc}
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'type'    => $this->type,
@@ -99,7 +99,7 @@ class Attachment implements Arrayable
      *   If file path is invalid, or file reading failed.
      *
      */
-    public static function createFromFile($path, $name = null): Attachment
+    public static function createFromFile(string $path, string $name = null): Attachment
     {
         if (!file_exists($path)) {
             throw new RuntimeException('No valid file found at specified path: ' . $path);

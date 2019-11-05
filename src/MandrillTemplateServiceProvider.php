@@ -11,7 +11,7 @@ class MandrillTemplateServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/mandrill-template.php', 'mandrill-template');
 
@@ -25,7 +25,7 @@ class MandrillTemplateServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton(MandrillTemplate::class, function () {
             return new MandrillTemplate();
