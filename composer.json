@@ -1,6 +1,6 @@
 {
     "name": "addgod/laravel-mandrill-template",
-    "description": "A Laravel Nova tool.",
+    "description": "Using Mandrill templates in Laravel.",
     "keywords": [
         "laravel",
         "nova"
