@@ -1,6 +1,6 @@
 <?php
 
-namespace Addgod\MandrillTemplate\Messages;
+namespace Addgod\MandrillTemplate;
 
 use Addgod\MandrillTemplate\Mandrill\Recipient\Type;
 use Illuminate\Notifications\Messages\SimpleMessage;
