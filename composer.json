@@ -1,0 +1,31 @@
+{
+    "name": "addgod/laravel-mandrill-template",
+    "description": "A Laravel Nova tool.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "mandrill/mandrill": "^1.0",
+        "ext-fileinfo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Addgod\\MandrillTemplate\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Addgod\\MandrillTemplate\\MandrillTemplateServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
