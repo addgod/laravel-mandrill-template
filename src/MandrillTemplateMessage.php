@@ -40,7 +40,7 @@ class MandrillTemplateMessage extends SimpleMessage
      *
      * @param string $template
      *
-     * @return \Addgod\MandrillTemplate\Messages\MandrillTemplateMessage
+     * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
     public function template(string $template)
     {
@@ -55,7 +55,7 @@ class MandrillTemplateMessage extends SimpleMessage
      * @param string      $address
      * @param string|null $name
      *
-     * @return \Addgod\MandrillTemplate\Messages\MandrillTemplateMessage
+     * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
     public function from(string $address, string $name = null)
     {
@@ -70,7 +70,7 @@ class MandrillTemplateMessage extends SimpleMessage
      * @param string      $address
      * @param string|null $name
      *
-     * @return \Addgod\MandrillTemplate\Messages\MandrillTemplateMessage
+     * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
     public function replyTo(string $address, string $name = null)
     {
@@ -85,7 +85,7 @@ class MandrillTemplateMessage extends SimpleMessage
      * @param string $address
      * @param string $name
      *
-     * @return \Addgod\MandrillTemplate\Messages\MandrillTemplateMessage
+     * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
     public function to(string $address, string $name = null)
     {
@@ -100,7 +100,7 @@ class MandrillTemplateMessage extends SimpleMessage
      * @param string      $address
      * @param string|null $name
      *
-     * @return \Addgod\MandrillTemplate\Messages\MandrillTemplateMessage
+     * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
     public function cc(string $address, string $name = null)
     {
@@ -115,7 +115,7 @@ class MandrillTemplateMessage extends SimpleMessage
      * @param string      $address
      * @param string|null $name
      *
-     * @return \Addgod\MandrillTemplate\Messages\MandrillTemplateMessage
+     * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
     public function bcc(string $address, string $name = null)
     {
