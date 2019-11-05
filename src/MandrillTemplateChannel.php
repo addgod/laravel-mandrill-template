@@ -20,7 +20,7 @@ class MandrillTemplateChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        /** @var \Addgod\MandrillTemplate\Messages\MandrillTemplateMessage $templateMessage */
+        /** @var \Addgod\MandrillTemplate\MandrillTemplateMessage $templateMessage */
         $templateMessage = $notification->toMandrillTemplate($notifiable);
 
         if (empty($templateMessage->template)) {
