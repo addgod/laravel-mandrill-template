@@ -73,7 +73,9 @@ class MandrillTemplateMessage extends SimpleMessage
      */
     public function from(string $address, string $name = null): self
     {
-        $this->from = [$address, $name];
+        if (!empty($address)) {
+            $this->from = [$address, $name];
+        }
 
         return $this;
     }
@@ -88,7 +90,9 @@ class MandrillTemplateMessage extends SimpleMessage
      */
     public function replyTo(string $address, string $name = null): self
     {
-        $this->replyTo = [$address, $name];
+        if (!empty($address)) {
+            $this->replyTo = [$address, $name];
+        }
 
         return $this;
     }
@@ -103,7 +107,9 @@ class MandrillTemplateMessage extends SimpleMessage
      */
     public function to(string $address, string $name = null): self
     {
-        $this->recipients[] = [$address, $name, Type::TO];
+        if (!empty($address)) {
+            $this->recipients[] = [$address, $name, Type::TO];
+        }
 
         return $this;
     }
@@ -118,7 +124,9 @@ class MandrillTemplateMessage extends SimpleMessage
      */
     public function cc(string $address, string $name = null): self
     {
-        $this->recipients[] = [$address, $name, Type::CC];
+        if (!empty($address)) {
+            $this->recipients[] = [$address, $name, Type::CC];
+        }
 
         return $this;
     }
@@ -133,7 +141,9 @@ class MandrillTemplateMessage extends SimpleMessage
      */
     public function bcc(string $address, string $name = null): self
     {
-        $this->recipients[] = [$address, $name, Type::BCC];
+        if (!empty($address)) {
+            $this->recipients[] = [$address, $name, Type::BCC];
+        }
 
         return $this;
     }
