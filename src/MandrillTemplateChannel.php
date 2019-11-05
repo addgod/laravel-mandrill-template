@@ -24,7 +24,7 @@ class MandrillTemplateChannel
         $templateMessage = $notification->toMandrillTemplate($notifiable);
 
         if (empty($templateMessage->template)) {
-            Throw new RuntimeException('No Mandrill template was found');
+            throw new RuntimeException('No Mandrill template was found');
         }
 
         if (is_string($recipients = $notifiable->routeNotificationFor('mail', $notification))) {

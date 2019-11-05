@@ -42,7 +42,7 @@ class MandrillTemplateMessage extends SimpleMessage
      *
      * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
-    public function template(string $template)
+    public function template(string $template): self
     {
         $this->template = $template;
 
@@ -57,7 +57,7 @@ class MandrillTemplateMessage extends SimpleMessage
      *
      * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
-    public function from(string $address, string $name = null)
+    public function from(string $address, string $name = null): self
     {
         $this->from = [$address, $name];
 
@@ -72,7 +72,7 @@ class MandrillTemplateMessage extends SimpleMessage
      *
      * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
-    public function replyTo(string $address, string $name = null)
+    public function replyTo(string $address, string $name = null): self
     {
         $this->replyTo = [$address, $name];
 
@@ -87,7 +87,7 @@ class MandrillTemplateMessage extends SimpleMessage
      *
      * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
-    public function to(string $address, string $name = null)
+    public function to(string $address, string $name = null): self
     {
         $this->recipients[] = [$address, $name, Type::TO];
 
@@ -102,7 +102,7 @@ class MandrillTemplateMessage extends SimpleMessage
      *
      * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
-    public function cc(string $address, string $name = null)
+    public function cc(string $address, string $name = null): self
     {
         $this->recipients[] = [$address, $name, Type::CC];
 
@@ -117,7 +117,7 @@ class MandrillTemplateMessage extends SimpleMessage
      *
      * @return \Addgod\MandrillTemplate\MandrillTemplateMessage
      */
-    public function bcc(string $address, string $name = null)
+    public function bcc(string $address, string $name = null): self
     {
         $this->recipients[] = [$address, $name, Type::BCC];
 
