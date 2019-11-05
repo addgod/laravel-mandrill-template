@@ -96,7 +96,7 @@ public function toMandrillTemplate($notifiable)
         ->line('The introduction to the notification.')
         ->action('Notification Action', url('/'))
         ->line('Thank you for using our application!')
-        ->salutation('Regards from us.'
+        ->salutation('Regards from us.')
         ->attach($file, 'name_of_file);
 }
 ```
