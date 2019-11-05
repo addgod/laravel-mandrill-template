@@ -12,7 +12,7 @@ You can install the package via composer:
 composer require addgod/laravel-mandrill-template
 ```
 
-To public the config file run:
+To publish the config file run:
 
 ```php
 php artisan vendor:publish --provider="Addgod\MandrillTemplate\MandrillTemplateServiceProvider"
