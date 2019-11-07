@@ -27,6 +27,26 @@ class MandrillTemplate
     }
 
     /**
+     * Get the available templates.
+     *
+     * @return array
+     */
+    public function templates(): array
+    {
+        return config('mandrill-template.templates');
+    }
+
+    /**
+     * Get the default template.
+     *
+     * @return string
+     */
+    public function defaultTemplate(): string
+    {
+        return config('mandrill-template.default_template');
+    }
+
+    /**
      * Send template as message via mandrill.
      *
      * @param \Addgod\MandrillTemplate\Mandrill\Template $template
