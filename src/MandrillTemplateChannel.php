@@ -49,7 +49,7 @@ class MandrillTemplateChannel
             ->setFromEmail($fromAddress ?? config('mail.from.address'))
             ->setFromName($fromName ?? config('mail.from.name'))
             ->addHeader('Reply-To', "$replyToName <$replyToAddress>")
-            ->setMergeVars(array_filter_recursive($templateMessage->toArray()));
+            ->setMergeVars($templateMessage->toArray());
 
         foreach ($templateMessage->recipients as $entry) {
             list ($email, $name, $type) = $entry;
