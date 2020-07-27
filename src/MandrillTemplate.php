@@ -56,6 +56,7 @@ class MandrillTemplate
      */
     public function send(Template $template, Message $message): void
     {
-        $this->api->messages->sendTemplate($template->getName(), null, $message->toArray());
+        $templateContent = $template->toArray();
+        $this->api->messages->sendTemplate($template->getName(), (count($templateContent['content']) > 0 ) ? $templateContent['content'] : null , $message->toArray());
     }
 }
