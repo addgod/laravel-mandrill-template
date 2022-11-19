@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Class MandrillTemplateFacade
  *
- * @method static static send(Template $template, Message $message) Send template as message via mandrill.
+ * @method static array send(Template $template, Message $message) Send template as message via mandrill.
  * @method static static templates() Get the available templates.
  * @method static static defaultTemplate() Get the default template.
  *
