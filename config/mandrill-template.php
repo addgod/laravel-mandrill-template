@@ -6,4 +6,6 @@ return [
     'templates' => [],
 
     'default_template' => '',
+
+    'merge_language' => 'handlebars', // handlebars or mailchimp
 ];
