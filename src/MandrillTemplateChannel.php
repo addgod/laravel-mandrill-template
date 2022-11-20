@@ -17,11 +17,11 @@ class MandrillTemplateChannel
      * @param mixed                                  $notifiable
      * @param \Illuminate\Notifications\Notification $notification
      *
-     * @return array
+     * @return void
      * @throws \ReflectionException
      *
      */
-    public function send($notifiable, Notification $notification): array
+    public function send($notifiable, Notification $notification): void
     {
         /** @var \Addgod\MandrillTemplate\MandrillTemplateMessage $templateMessage */
         $templateMessage = $notification->toMandrillTemplate($notifiable);
@@ -63,6 +63,10 @@ class MandrillTemplateChannel
             $message->addAttachment($attachment);
         }
 
-        return MandrillTemplateFacade::send($template, $message);
+        $response = MandrillTemplateFacade::send($template, $message);
+
+        if (property_exists($notification, 'mandrillTemplateResponse')) {
+            $notification->mandrillTemplateResponse = $response;
+        }
     }
 }
