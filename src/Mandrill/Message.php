@@ -589,7 +589,7 @@ class Message implements Arrayable
             'headers'             => $this->headers,
             'preserve_recipients' => $this->preserveRecipients,
             'merge'               => true,
-            'merge_language'      => 'handlebars',
+            'merge_language'      => config('mandrill-template.merge_language', 'handlebars'),
             'global_merge_vars'   => Utils\ArrayHelper::assocToNameContent($this->mergeVars),
             'merge_vars'          => $mergeVars,
             'tags'                => $this->tags,
