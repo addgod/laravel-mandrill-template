@@ -63,6 +63,10 @@ class MandrillTemplateChannel
             $message->addAttachment($attachment);
         }
 
-        MandrillTemplateFacade::send($template, $message);
+        $response = MandrillTemplateFacade::send($template, $message);
+
+        if (property_exists($notification, 'mandrillTemplateResponse')) {
+            $notification->mandrillTemplateResponse = $response;
+        }
     }
 }

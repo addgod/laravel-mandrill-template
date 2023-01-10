@@ -52,11 +52,16 @@ class MandrillTemplate
      * @param \Addgod\MandrillTemplate\Mandrill\Template $template
      * @param \Addgod\MandrillTemplate\Mandrill\Message  $message
      *
-     * @return void
+     * @return array
      */
-    public function send(Template $template, Message $message): void
+    public function send(Template $template, Message $message): array
     {
         $templateContent = $template->toArray();
-        $this->api->messages->sendTemplate($template->getName(), (count($templateContent['content']) > 0 ) ? $templateContent['content'] : null , $message->toArray());
+
+        return $this->api->messages->sendTemplate(
+            $template->getName(),
+            (count($templateContent['content']) > 0) ? $templateContent['content'] : null,
+            $message->toArray()
+        );
     }
 }
