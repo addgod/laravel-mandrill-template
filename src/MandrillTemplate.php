@@ -11,7 +11,7 @@ class MandrillTemplate
     /**
      * @var \Mandrill
      */
-    protected $client;
+    protected $api;
 
     /**
      * MandrillTemplate constructor.
