@@ -8,7 +8,7 @@
 	"license": "MIT",
 	"require": {
 		"php": "^7.3|^8.0",
-		"mandrill/mandrill": "^1.0",
+		"mailchimp/transactional": "^1.0",
 		"ext-fileinfo": "*"
 	},
 	"autoload": {
