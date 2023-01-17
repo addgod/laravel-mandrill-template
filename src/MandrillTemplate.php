@@ -4,7 +4,7 @@ namespace Addgod\MandrillTemplate;
 
 use Addgod\MandrillTemplate\Mandrill\Message;
 use Addgod\MandrillTemplate\Mandrill\Template;
-use Mandrill;
+use MailchimpTransactional\ApiClient;
 
 class MandrillTemplate
 {
@@ -20,7 +20,8 @@ class MandrillTemplate
      */
     public function __construct()
     {
-        $this->api = new Mandrill(config('mandrill-template.secret'));
+        $this->api = new ApiClient();
+        $this->api->setApiKey(config('mandrill-template.secret'));
         if (config('app.debug')) {
             $this->api->debug = true;
         }
@@ -59,9 +60,11 @@ class MandrillTemplate
         $templateContent = $template->toArray();
 
         return $this->api->messages->sendTemplate(
-            $template->getName(),
-            (count($templateContent['content']) > 0) ? $templateContent['content'] : null,
-            $message->toArray()
+            [
+                'template_name' => $template->getName(),
+                'template_content' => (count($templateContent['content']) > 0) ? $templateContent['content'] : '',
+                'message' => $message->toArray()
+            ]
         );
     }
 }
