@@ -27,6 +27,17 @@ class MandrillTemplate
         }
     }
 
+     /**
+     * Set the API key.
+     *
+     * @param string $apiKey
+     * @return void
+     */
+    public function setApiKey(string $apiKey): void
+    {
+        $this->api->setApiKey($apiKey);
+    }
+
     /**
      * Get the available templates.
      *
